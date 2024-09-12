@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var value = 1;
+
+        var obj = {
+        value: 100,
+        foo: function() {
+            console.log("foo's this: ",  this);  // obj
+            console.log("foo's this.value: ",  this.value); // 100
+            function bar(param) {
+            console.log("bar's this: ",  this); // obj
+            console.log("bar's this.value: ", this.value); // 100
+            console.log("bar's arguments: ", param);
+            }
+            // bar.apply(obj, [1, 2]);
+            // bar.call(obj, 1, 2);
+            bar.bind(obj);
+        }
+        };
+
+        obj.foo();
+    </script>
+</body>
+</html>

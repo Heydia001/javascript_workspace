@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let vlaue = 1;
+
+        const obj = {
+            vlaue: 100,
+            foo: function() {
+                console.log("foo: ", this)
+                console.log("foo: ", this.vlaue)
+
+                // 메서드의 내부 함수의 경우 this는 전역 객체를 바인딩
+                function bar() {
+                    console.log("bar: ", this) // window
+                    console.log("bar: ", this.vlaue)  //undefined
+                }
+                bar();
+
+                let that = this; //object
+                // 화살표 함수는 선언 될 때 상위 스코프의 this가 바인딩
+                const barArrow = () => {
+                    console.log("barArrow: ", this); //obj
+                    console.log("barArrow: ", this.vlaue); //100
+                }
+                barArrow();
+            }
+        }
+        obj.foo();
+    </script>
+</body>
+</html>

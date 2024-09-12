@@ -6,10 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>자바스크립트 실습</h1>
     <script>
-        // window.alert("자바스크립트 실습");
-        window.console.log("자바스크립트 실습");
+        let value = 1;
+        const obj = {
+            value: 100,
+            foo: function () {
+                console.log("obj foo: ", this); // Object
+            }
+        }
+        obj.foo();
     </script>
 </body>
 </html>
