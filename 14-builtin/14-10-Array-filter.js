@@ -15,3 +15,9 @@ arr = [
 
 result = arr.filter(i => i.age > 30);
 console.log(result);
+
+result = arr.filter(i => true);
+console.log(result);
+
+// filter는 결국 true / flase에 따라 필터링한다.
+
