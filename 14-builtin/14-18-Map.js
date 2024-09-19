@@ -62,4 +62,3 @@ console.log([...studentMap.entries()].sort((a, b) => b[1] - a[1]));
 
 console.log([...studentMap.entries()].sort((a, b) => a[1] - b[1])); 
 // [ [ '오삼남', 97 ], [ '오오남', 98 ], [ '오사남', 99 ] ]
-

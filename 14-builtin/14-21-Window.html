@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(false) {
+        window.alert("hi");
+        let result = window.confirm();
+        console.log(result); // user와 상호작용한 값을 boolean으로 반환한다.
+
+        result = window.prompt("Hello");
+        console.log(result);
+        }
+        
+        console.log(window.location.href);
+        // window.location.href = "http:";
+
+        window.localStorage.setItem("name", "홍길동");
+        window.localStorage.setItem("age", 30);
+
+        console.log(window.localStorage.getItem("name"));
+
+        window.sessionStorage.setItem("sessionKey", "abcd1234");
+        // const key = window.sessionStorage.getItem("sessionKey");
+        // console.log(key);
+        window.sessionStorage.clear();
+        const user = {name: "오일남", age: 20};
+        window.sessionStorage.setItem("uaser", JSON.stringify(user));
+        const sessionUser = JSON.parse(window.sessionStorage.getItem("user"));
+        console.log(sessionUser);
+
+        window.setTimeout(() => {
+            console.log("1초 뒤 출력")
+        }, 1000);
+
+        let count = 0;
+        const intervalExample = window.setInterval(() => {
+            console.log("1초마다 실행");
+            if(count === 3){
+                clearInterval(intervalExample);
+            }
+        }, 1000)
+
+    </script>
+</body>
+</html>

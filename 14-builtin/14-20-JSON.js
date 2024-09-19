@@ -10,6 +10,31 @@
  * 
  */
 
-{
+let obj = {
     name: "오일남",
+    age: 90,
+    address: "Busan"
 }
+
+let json = JSON.stringify(obj);
+
+let jsonReplacer = JSON.stringify(obj, ["name", "age"]);
+console.log(jsonReplacer); // {"name":"오일남","age":90}
+
+let jsonrReplacerSpace = JSON.stringify(obj, Object.keys(obj), 2);
+console.log(jsonrReplacerSpace);
+
+/**
+ * JSON.parse(text[, reviver]);
+ */
+
+let objParser = JSON.parse(jsonReplacer);
+console.log("parse")
+console.log(objParser); // { name: '오일남', age: 90 } -> type 는 Object
+
+let objParserReviver = JSON.parse(jsonReplacer, (key, value) => {
+    if(key === "age") return value + 1;
+    return value;
+});
+console.log(`objParserReviver`)
+console.log(objParserReviver); //{ name: '오일남', age: 91 }
